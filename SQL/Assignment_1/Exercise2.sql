@@ -1,0 +1,12 @@
+DROP DATABASE IF EXISTS exercise_2;
+CREATE DATABASE exercise_2;
+USE exercise_2;
+
+DROP TABLE IF EXISTS Infor;
+CREATE TABLE Infor
+(
+	ID				INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `Name`			VARCHAR(20),
+    `Code`			CHAR(5),
+    ModifiedDate	DATETIME
+);
