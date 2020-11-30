@@ -298,7 +298,7 @@ from
 group by
 	DepartmentID
 having
-	count(*)>0;
+	count(*)>3;
 
 -- Question 13: Viết lệnh để lấy ra danh sách câu hỏi được sử dụng trong đề thi nhiều nhất
 
