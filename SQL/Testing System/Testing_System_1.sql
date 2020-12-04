@@ -29,8 +29,8 @@ CREATE TABLE `Account`
     DepartmentID	INT,
     PositionID		INT,
     CreateDate		Date,
-    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID),
-    FOREIGN KEY (PositionID) REFERENCES `Position`(PositionID)
+    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID) ON DELETE CASCADE,
+    FOREIGN KEY (PositionID) REFERENCES `Position`(PositionID) ON DELETE CASCADE
 );
 
 -- table 4
@@ -51,8 +51,8 @@ CREATE TABLE GroupAccount
     AccountID		INT NOT NULL,
     JoinDate 		Date,
     CONSTRAINT PRIMARY KEY(GroupID, AccountID),
-	CONSTRAINT FOREIGN KEY(GroupID) REFERENCES `Group`(GroupID),
-    CONSTRAINT FOREIGN KEY(AccountID) REFERENCES `Account`(AccountID)
+	CONSTRAINT FOREIGN KEY(GroupID) REFERENCES `Group`(GroupID) ON DELETE CASCADE,
+    CONSTRAINT FOREIGN KEY(AccountID) REFERENCES `Account`(AccountID) ON DELETE CASCADE
 );
 
 -- table 6
@@ -81,8 +81,8 @@ CREATE TABLE Question
     TypeID			INT,
     CreatorID		INT,
     CreateDate		DATE,
-    CONSTRAINT FOREIGN KEY(CategoryID) REFERENCES CategoryQuestion(CategoryID),
-    CONSTRAINT FOREIGN KEY(TypeID) REFERENCES TypeQuestion(TypeID)
+    CONSTRAINT FOREIGN KEY(CategoryID) REFERENCES CategoryQuestion(CategoryID) ON DELETE CASCADE,
+    CONSTRAINT FOREIGN KEY(TypeID) REFERENCES TypeQuestion(TypeID) ON DELETE CASCADE
 );
 
 -- table 9
@@ -93,7 +93,7 @@ CREATE TABLE Answer
     Content			VARCHAR(100),
     QuestionID		INT,
     isCorrect		VARCHAR(10),
-    CONSTRAINT FOREIGN KEY(QuestionID) REFERENCES Question(QuestionID)
+    CONSTRAINT FOREIGN KEY(QuestionID) REFERENCES Question(QuestionID) ON DELETE CASCADE
 );
 
 -- table 10
@@ -116,8 +116,8 @@ CREATE TABLE  ExamQuestion
 	ExamID 			INT NOT NULL,
     QuestionID		INT NOT NULL,
     CONSTRAINT PRIMARY KEY (ExamID, QuestionID),
-    CONSTRAINT FOREIGN KEY(ExamID) REFERENCES Exam(ExamID),
-    CONSTRAINT FOREIGN KEY(QuestionID) REFERENCES Question(QuestionID)
+    CONSTRAINT FOREIGN KEY(ExamID) REFERENCES Exam(ExamID) ON DELETE CASCADE,
+    CONSTRAINT FOREIGN KEY(QuestionID) REFERENCES Question(QuestionID) ON DELETE CASCADE
 );
 
 -- Add data Department
