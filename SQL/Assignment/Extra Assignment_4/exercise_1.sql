@@ -143,7 +143,7 @@ select @num;
 -- c) Viết stored procedure (có parameter) để in ra các module đang được thực hiện)
 
 DELIMITER $$
-CREATE PROCEDURE project_modules_dang_lam (IN projectID INT , IN employeeID INT )
+CREATE PROCEDURE project_modules_dang_lam (IN projectID INT)
 	BEGIN
 		SELECT
 			*
@@ -152,12 +152,12 @@ CREATE PROCEDURE project_modules_dang_lam (IN projectID INT , IN employeeID INT 
         WHERE 
 			ProjectModulesCompletedOn IS NULL
 			AND 
-            (ProjectID = projectID OR EmployeeID = employeeID);
+            (ProjectID = projectID );
     END$$
 DELIMITER ;
 
-SET @a = 0, @b = 0;
-CALL project_modules_dang_lam(@a, @b);
+SET @a = 0;
+CALL project_modules_dang_lam(@a);
 select @a, @b;
 
 -- d) parameter truyền vào là ProjectID. trả ra danh sách các nhân viên tham gia làm project đó mà ko có ai giao việc cả.

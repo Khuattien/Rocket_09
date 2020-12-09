@@ -123,12 +123,12 @@ CREATE TABLE  ExamQuestion
 -- Add data Department
 INSERT INTO Department (DepartmentID, DepartmentName)
 VALUES
-			(1,		N'Bán hàng'),
+			(1,		'Bán hàng'),
             (2,		'Marketing'),
-            (3,		N'Bảo vệ'),
-            (4,		N'Nhân sự'),
-            (5,		'Sale');
-
+            (3,		'Bảo vệ'),
+            (4,		'Nhân sự'),
+            (5,		'Sale'),
+			(6,		'Phong cho');
 -- Add data  Position
 INSERT INTO Position (PositionID, PositionName)
 VALUES
@@ -190,8 +190,9 @@ VALUES
             (2,		N'Question 2', 2, 2, 1, '2013-12-4'),
             (3,		N'Question 3', 3, 3, 1, '2013-12-5'),
             (4,		N'Question 4', 4, 4, 1, '2013-12-7'),
-            (5,		N'Question 5', 5, 5, 1, '2013-12-15');
-            
+            (5,		N'Question 5', 5, 5, 1, '2013-12-15'),
+            (6,		N'Question 6', 5, 5, 1, '2020-1-15'),
+			(7,		N'Question 7', 5, 5, 1, '2020-8-15');
 -- Add data  Answer
 INSERT INTO Answer (AnswerID, Content, QuestionID, isCorrect)
 VALUES

@@ -315,6 +315,7 @@ create procedure Type_question_nhieu_cau_hoi_nhat ()
 DELIMITER ;
 
 call Type_question_nhieu_cau_hoi_nhat ();
+
 -- Question 5: Sử dụng store ở question 4 để tìm ra tên của type question
 -- ??
 select
@@ -361,7 +362,7 @@ DELIMITER $$
 create procedure infor (IN fullname varchar(20), IN email varchar(20))
 	begin
 		insert into `Account` (Email, UserName, FullName, DepartmentID, PositionID, CreateDate)
-        values	(email, )
+        values	(email, SUBSTRING_INDEX(email,'@',1), fullname, select DepartmentID from Department where DepartmentName='phong cho', select )
     end$$
 DELIMITER ;
 
@@ -517,7 +518,6 @@ BEGIN
 			thang 
 			on
 			bang_tam.thang= thang.thang;
-            
 			drop table thang;
 END$$
 DELIMITER ;
