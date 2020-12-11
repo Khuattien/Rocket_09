@@ -129,7 +129,7 @@ begin
 								where 
 									b.location_id = new.location_id
                             ) 
-			) > 10 ) then
+			) >= 10 ) then
 			signal sqlstate '12345'
             set message_text = 'Qua 10 nv';
         end if;
