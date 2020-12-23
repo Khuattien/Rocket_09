@@ -49,6 +49,7 @@ public class Program {
 		acc1.positionId=posi1;
 		acc1.createDate=LocalDate.of(2015, 1, 25);
 		acc1.groupId= new Group[] {g1};
+		g1.account = new Account[] {acc1};
 		
 		Account acc2 = new Account();
 		acc2.id =2;
@@ -59,6 +60,7 @@ public class Program {
 		acc2.positionId=posi2;
 		acc2.createDate=LocalDate.of(2015, 2, 25);
 		acc2.groupId= new Group[] {g2};
+		g2.account = new Account[] {acc2};
 		
 		Account acc3 = new Account();
 		acc3.id =3;
@@ -69,6 +71,7 @@ public class Program {
 		acc3.positionId=posi3;
 		acc3.createDate=LocalDate.of(2015, 3, 25);
 		acc3.groupId= new Group[] {g3};
+		g3.account = new Account[] {acc3};
 		
 		TypeQuestion tq1 = new TypeQuestion();
 		tq1.typeID=1;

@@ -32,8 +32,8 @@ public class Exercise2 {
 //		question16();
 //		question17();
 //		question18();
-		question19();
-//		question20();
+//		question19();
+		question20();
 //		question21();
 	
 	}
@@ -277,101 +277,101 @@ public class Exercise2 {
 	}
 	
 	//tren mang
-	public static boolean testSoThuanNghich(int n){
-        StringBuilder xau= new StringBuilder();
-        String str= ""+n;
-        xau.append(str);
-        String check= ""+xau.reverse();
-        if(str.equals(check)) return true;
-        else return false;
-}
-	public static void question10() {
-		int n,count=0;
-        for(n=100000 ; n<= 999999 ; n++){
-                    if(testSoThuanNghich(n)){
-                                System.out.println(n);count++;
-                    }
-        }
-        System.out.println("Co "+count+" so thuan nghich co 6 chu so");
-	}
-	
-	//mang
-	 public static int nhap(){
-         Scanner input= new Scanner(System.in);
-         boolean check= false;
-         int n=0;
-         while(!check){
-                     System.out.print(" ");
-                     try{
-                                 n= input.nextInt();
-                                 check= true;
-                     }catch(Exception e){
-                                 System.out.println("Ban phai nhap so! hay nhap lai...");
-                                 input.nextLine();
-                     }
-         }
-         return (n);
-}
-	
-	public static void question11() {
-		System.out.print("Nhap n");
-        int n= nhap();
-        int[] array= new int[n+2];
-        int i,j,k=n-1,temp,check=1;
-        for(i=0 ; i<n ; i++){
-                    array[i]= i+1;
-        }
-        System.out.println("Cac hoan vi ke la: ");
-        try{
-                    i= n-2;
-                    while(check>0){
-                                //In ra hoan vi
-                                System.out.println("   ");
-                                for(j=0 ; j<n ; j++){
-                                            System.out.print(" "+array[j]);
-                                }
-                                for(i= n-2 ; i>=0 ; i--){
-                                            check= 1;
-                                if(array[i] < array[i+1]){
-                                            if(i==n-2){
-                                                        temp= array[i];
-                                                        array[i]= array[n-1];
-                                                        array[n-1]= temp;
-                                                        break;
-                                            }
-                                            else{
-                                                        //Tim so a[k] nho nhat ma >a[i] trong cac so ben phai a[i]
-                                                        k= i+1;
-                                                                    for(j=i+1 ; j<n ; j++){
-                                                                                if(array[i+1]>array[j] && array[j]>array[i]) k=j;
-
-                                                                    }
-                                                                    //Doi cho a[k] va a[i]
-                                                                    temp= array[i];
-                                                                    array[i]= array[k];
-                                                                    array[k]= temp;
-                                                        //Sap xep lai tu a[i+1] toi a[n]
-                                                        for(j=i+1 ; j<n ; j++){
-                                                                    for(int m= i+1 ; m<n ; m++){
-                                                                                if(array[j]<array[m]){
-                                                                                            temp= array[j];
-                                                                                            array[j]= array[m];
-                                                                                            array[m]= temp;
-                                                                                }
-                                                                    }
-                                                        }
-                                                        break;
-                                            }
-                                }
-                                else {
-                                            check=0;
-                                //          break;
-                                }
-                                }
-                                //if(i==0)check=0;
-                    }
-        }catch(Exception e){}
-	}
+//	public static boolean testSoThuanNghich(int n){
+//        StringBuilder xau= new StringBuilder();
+//        String str= ""+n;
+//        xau.append(str);
+//        String check= ""+xau.reverse();
+//        if(str.equals(check)) return true;
+//        else return false;
+//}
+//	public static void question10() {
+//		int n,count=0;
+//        for(n=100000 ; n<= 999999 ; n++){
+//                    if(testSoThuanNghich(n)){
+//                                System.out.println(n);count++;
+//                    }
+//        }
+//        System.out.println("Co "+count+" so thuan nghich co 6 chu so");
+//	}
+//	
+//	//mang
+//	 public static int nhap(){
+//         Scanner input= new Scanner(System.in);
+//         boolean check= false;
+//         int n=0;
+//         while(!check){
+//                     System.out.print(" ");
+//                     try{
+//                                 n= input.nextInt();
+//                                 check= true;
+//                     }catch(Exception e){
+//                                 System.out.println("Ban phai nhap so! hay nhap lai...");
+//                                 input.nextLine();
+//                     }
+//         }
+//         return (n);
+//}
+//	
+//	public static void question11() {
+//		System.out.print("Nhap n");
+//        int n= nhap();
+//        int[] array= new int[n+2];
+//        int i,j,k=n-1,temp,check=1;
+//        for(i=0 ; i<n ; i++){
+//                    array[i]= i+1;
+//        }
+//        System.out.println("Cac hoan vi ke la: ");
+//        try{
+//                    i= n-2;
+//                    while(check>0){
+//                                //In ra hoan vi
+//                                System.out.println("   ");
+//                                for(j=0 ; j<n ; j++){
+//                                            System.out.print(" "+array[j]);
+//                                }
+//                                for(i= n-2 ; i>=0 ; i--){
+//                                            check= 1;
+//                                if(array[i] < array[i+1]){
+//                                            if(i==n-2){
+//                                                        temp= array[i];
+//                                                        array[i]= array[n-1];
+//                                                        array[n-1]= temp;
+//                                                        break;
+//                                            }
+//                                            else{
+//                                                        //Tim so a[k] nho nhat ma >a[i] trong cac so ben phai a[i]
+//                                                        k= i+1;
+//                                                                    for(j=i+1 ; j<n ; j++){
+//                                                                                if(array[i+1]>array[j] && array[j]>array[i]) k=j;
+//
+//                                                                    }
+//                                                                    //Doi cho a[k] va a[i]
+//                                                                    temp= array[i];
+//                                                                    array[i]= array[k];
+//                                                                    array[k]= temp;
+//                                                        //Sap xep lai tu a[i+1] toi a[n]
+//                                                        for(j=i+1 ; j<n ; j++){
+//                                                                    for(int m= i+1 ; m<n ; m++){
+//                                                                                if(array[j]<array[m]){
+//                                                                                            temp= array[j];
+//                                                                                            array[j]= array[m];
+//                                                                                            array[m]= temp;
+//                                                                                }
+//                                                                    }
+//                                                        }
+//                                                        break;
+//                                            }
+//                                }
+//                                else {
+//                                            check=0;
+//                                //          break;
+//                                }
+//                                }
+//                                //if(i==0)check=0;
+//                    }
+//        }catch(Exception e){}
+//	}
 	
 	//mang
 //	public static int nhap(){
@@ -714,7 +714,7 @@ public class Exercise2 {
 			
 			if(str.charAt(i) ==' ' && str.charAt(i+1)==' ')
 			{
-				str = str.replaceFirst(" ","");
+				str = str.replaceFirst("  "," ");
 				i--;
 				q--;
 			}
